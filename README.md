@@ -24,69 +24,62 @@ PC, Laptop and Cable Modem were added to the network using the Device-Type selec
 
 <h2 align="center">Add correct physical cabling to devices in the workspace:</h2>
 
-Copper straight-through cable was used to connect the PC to the wireless router using the FastEthernet0 interface of the PC and the Ethernet 1 interface of the wireless router.
+A copper straight-through cable was used from the Device-Type selection box to connect the PC to the wireless router using the FastEthernet0 interface of the PC and the Ethernet 1 interface of the wireless router.
 
 <img src="https://i.imgur.com/IhhKVii.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
 
-<img src="https://i.imgur.com/rbAXliB.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
+<img src="https://i.imgur.com/Pg5JqCH.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
+
+A copper straight-through cable was used from the Device-Type selection box to connect the wireless router to the cable modem using the internet interface of the wireless router and the Port 1 interface of the cable modem.
+
+<img src="https://i.imgur.com/VgwCO3c.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
+
+<img src="https://i.imgur.com/ehCSCXH.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
+
+A coaxial cable was used from the Device-Type selection and attached to the Port 0 interface of the cable modem and the coaxial 7 interface of the internet cloud.
+
+<img src="https://i.imgur.com/2nkctrL.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
+
+<img src="https://i.imgur.com/2nkctrL.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
+
+<h2 align="center">Configure the End Devices and Verify Connectivity:</h2>
+
+Double clicking the PC allows us to navigate to the Desktop tab and then to the IP Configuration.
+
+<img src="https://i.imgur.com/7cESyrc.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
+
+Selecting DHCP for the IP Configuration heading will allow the PC to receive an IP address from the DHCP.
+
+<img src="https://i.imgur.com/EYZAxa9.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
+
+<img src="https://i.imgur.com/EYZAxa9.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
+
+Navigate to command line within the PC and enter the "ipconfig /all" prompt to verify the PC received an IPv4 address in the 192.168.0.x range.
+
+<img src="https://i.imgur.com/iRrVV1X.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
 
 
-<h2 align="center">Change file permissions:</h2>
+<h2 align="center">Configure the Laptop:</h2>
 
-The organization does not allow others to have write access to any files. Using Linux commands I will identify the files which need permissions modified and use linux commands to modify them.
+Double clicking the laptop will allow you to select the physical tab.
 
-The file project_k.txt has granted other users permission to write files. 
+<img src="https://i.imgur.com/Kp46rci.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
 
-<img src="https://i.imgur.com/kShlx4m.png" height="80%" width="80%" alt="Editing Linux Permissions steps"/>
+Power off the laptop by pressing the power off button. Remove the currently installed Ethernet copper module by clicking on the module on the side of the laptop and dragging it to the modules pane on the left. 
+Install WPC300N module by clicking it in the modules pane and dragging it to the empty module on the laptop. Power on laptop.
 
-In the chmod command u sets the permissions for the user who owns the file, g sets the permissions for the group that owns the file, and o sets the permissions for others.
+<img src="https://i.imgur.com/Kwz01MX.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
 
-The following command will modify the other user permissions to remove the permission to write files: chmod o-w project_k.txt.
+<img src="https://i.imgur.com/Lk5KCKA.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
 
-This is the outcome of the permissions successfully modified: 
+With the wireless module connected, navigate to the PC wireless section of the Laptop and connect to the Home Network.
 
-<img src="https://i.imgur.com/k3uxC4M.png" height="80%" width="80%" alt="Editing Linux Permissions steps"/>
+<img src="https://i.imgur.com/51RDhsB.png" height="80%" width="80%" alt="Building a virtual network in Cisco Packet Tracer"/>
 
+Close the PC wireless tab and select the Web Browser. Within the web browser navigate to cisco.srv to verify the connectivity of the wireless network.
 
-<h2 align="center">Change file permissions on a hidden file:</h2>
+<img src="https://i.imgur.com/hfm4glc.png" height="80%" width="80%" alt="Editing Linux Permissions steps"/>
 
-The research team has archived .project_x.txt, which is why it’s a hidden file. This file should not have write permissions for anyone, but the user and group should be able to read the file. I know .project_x.txt is a hidden file because it starts with a full stop (.).
-
-
-<img src="https://i.imgur.com/QGaV7AQ.png" height="80%" width="80%" alt="Editing Linux Permissions steps"/>
-
-Currently the user and group can both write to the hidden file and the user is the only user type who can read the file.
-
-The following command ensures to remove the write permissions for both the user and group and add the read permissions for the group:
-
-<img src="https://i.imgur.com/6lagvDp.png" height="80%" width="80%" alt="Editing Linux Permissions steps"/>
-
-This is the successful outcome:
-
-<img src="https://i.imgur.com/M2ZcWJ5.png" height="80%" width="80%" alt="Editing Linux Permissions steps"/>
-
-
-<h2 align="center">Change directory permissions:</h2>
-
-The files and directories in the projects directory belong to the researcher2 user. Only researcher2 should be allowed to access the drafts directory and its contents. Use a Linux command to modify the permissions accordingly.
-
-Currently group users have permissions to execute files in the drafts directory.
-
-<img src="https://i.imgur.com/hGOWugA.png" height="80%" width="80%" alt="Editing Linux Permissions steps"/>
-
-To remove the group permissions to remove the executable permissions for the group user this command is used:
-
-<img src="https://i.imgur.com/Hgaw7OI.png" height="80%" width="80%" alt="Editing Linux Permissions steps"/>
-
-This is the outcome:
-
-<img src="https://i.imgur.com/UINsdDD.png" height="80%" width="80%" alt="Editing Linux Permissions steps"/>
-
-
-<h2 align="center">Summary:</h2>
-
-
-Linux commands were used to modify, remove & add permissions for the three user types: user, group and other as per the organizations requirements. Removing unauthorized access and adding authorized access ensures that the system can stay secure.
 
 
 <!--
