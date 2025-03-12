@@ -14,7 +14,6 @@ Building a simple network in Cisco Packet Tracer in the Logical Workspace by: de
 <h1>Program walk-through:</h1>
 
 
-
 <h2 align="center">Adding devices to the workspace: </h2>
   
 PC, Laptop and Cable Modem were added to the network using the Device-Type selection box
